@@ -1,180 +1,270 @@
-<div align="center">
+# 🚚 SupplyLink – Smart Supply Chain Management System
 
-# 🚚 SupplyLink
+SupplyLink is a modern full-stack Supply Chain Management platform designed to streamline inventory operations, order processing, shipment tracking, and logistics monitoring through a centralized dashboard.
 
-**A real-time supply chain platform — inventory, orders, and live shipment tracking in one dashboard.**
+The system combines real-time tracking, role-based access control, operational analytics, inventory management, and shipment lifecycle monitoring to provide end-to-end visibility across supply chain operations.
 
-
-
-
-## Overview
-
-SupplyLink gives a team a single, live view of stock levels, order status, and shipments moving across the country — updated the moment something changes. It's built as a full-stack MERN app with role-based access, a live tracking simulator, and a real-time dashboard powered by Socket.IO.
+---
 
 ## ✨ Features
 
-- 📊 **Live dashboard** — inventory levels, order breakdown by status, low-stock alerts, and average delivery time at a glance
-- 📦 **Inventory management** — add, update, and track stock with automatic low-stock detection
-- 🧾 **Order management** — create orders, transition status (`pending → shipped → delivered / cancelled`), and view a full status-change history per order
-- 🛰️ **Live shipment tracking** — a simulated fleet moves along real origin → destination routes, broadcasting position updates every few seconds over WebSockets
-- 🔐 **Role-based access control** — `admin`, `order`, and `inventory` roles each see only what's relevant to them, enforced on both the API and the UI
-- ⚡ **Real-time updates** — order and tracking changes push to connected clients instantly via Socket.IO, no polling required
-- 🛡️ **Hardened API** — JWT auth, bcrypt password hashing, request validation, rate limiting, and Helmet security headers out of the box
+### 🔐 Authentication & Authorization
 
-## 🧱 Tech Stack
+* Secure JWT-based authentication
+* Password hashing using bcrypt
+* Role-based access control
+* Protected routes and APIs
+* Session persistence
 
-| Layer | Technology |
-|---|---|
-| **Frontend** | React 19, React Router 7, Vite, Recharts, Leaflet / React-Leaflet, Socket.IO Client |
-| **Backend** | Node.js, Express 5, Mongoose (MongoDB Atlas) |
-| **Real-time** | Socket.IO |
-| **Auth & Security** | JWT, bcryptjs, Helmet, express-rate-limit, express-validator |
-| **Logging** | Morgan |
+### 📦 Inventory Management
 
-## 📁 Project Structure
+* Inventory tracking and monitoring
+* Product stock management
+* Low-stock alerts
+* Inventory updates and restocking
+* Warehouse inventory visibility
 
+### 📋 Order Management
+
+* Create and manage orders
+* Update order status
+* Order lifecycle management
+* Route validation
+* Order cancellation support
+
+### 🚛 Real-Time Shipment Tracking
+
+* Live shipment monitoring
+* Dynamic ETA calculations
+* Real-time location updates
+* Socket.IO powered synchronization
+* Shipment progress timeline
+
+### 📊 Business Intelligence Dashboard
+
+* Inventory analytics
+* Order metrics
+* Shipment statistics
+* Delivery performance monitoring
+* Operational insights and KPIs
+
+### 🗺 Interactive Tracking Maps
+
+* OpenStreetMap integration
+* Live shipment visualization
+* Route monitoring
+* Location tracking
+* Interactive delivery maps
+
+### ⚡ Real-Time System Updates
+
+* Socket.IO integration
+* Live inventory updates
+* Instant shipment status updates
+* Dynamic dashboard refresh
+* Real-time operational monitoring
+
+### 🛡 Security & Reliability
+
+* JWT authentication
+* Express Validator
+* Rate Limiting
+* Helmet security middleware
+* Centralized error handling
+* Secure API architecture
+
+---
+
+# 🏗 System Architecture
+
+```text
+Frontend (React + Vite)
+        │
+        ▼
+REST APIs + Socket.IO
+        │
+        ▼
+Backend (Node.js + Express)
+        │
+        ▼
+MongoDB Database
+        │
+        ▼
+Live Tracking Simulator
 ```
-spcl/
-├── server/                     # Express API
-│   ├── config/                 # DB connection, city/route data
-│   ├── controllers/            # Route handlers (auth, orders, inventory, dashboard)
-│   ├── middleware/              # Auth guard, role guard, error handling, validation
-│   ├── models/                  # Mongoose schemas (User, Order, Inventory)
-│   ├── routes/                  # API route definitions
-│   ├── services/                # Live tracking simulator
-│   ├── validators/              # express-validator request schemas
-│   ├── seed.js                  # Sample data seeder
-│   └── index.js                 # App entry point
+
+---
+
+# 🛠 Technology Stack
+
+## Frontend
+
+* React 19
+* Vite
+* React Router
+* Axios
+* Recharts
+* Chart.js
+* React Leaflet
+* Socket.IO Client
+* React Icons
+
+## Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT Authentication
+* Socket.IO
+* Express Validator
+* Helmet
+* Rate Limiter
+* bcrypt
+
+## Database
+
+* MongoDB Atlas
+* Mongoose ODM
+
+---
+
+# 📂 Project Structure
+
+```text
+SupplyLink
 │
-└── supply-chain-frontend/       # React (Vite) client
-    └── src/
-        ├── api/                  # Axios instance
-        ├── components/           # Sidebar, Topbar, Charts, ProtectedRoute, etc.
-        ├── context/              # Auth context/provider
-        ├── lib/                  # Socket.IO client setup
-        └── pages/                # Dashboard, Orders, Inventory, Tracking, Auth
+├── server
+│   │
+│   ├── config
+│   │   ├── db.js
+│   │   └── cities.js
+│   │
+│   ├── controllers
+│   │   ├── authController.js
+│   │   ├── dashboardController.js
+│   │   ├── inventoryController.js
+│   │   └── orderController.js
+│   │
+│   ├── middleware
+│   │   ├── auth.js
+│   │   ├── validate.js
+│   │   └── errorHandler.js
+│   │
+│   ├── models
+│   │   ├── User.js
+│   │   ├── Inventory.js
+│   │   └── Order.js
+│   │
+│   ├── routes
+│   │   ├── auth.js
+│   │   ├── dashboard.js
+│   │   ├── inventory.js
+│   │   ├── orders.js
+│   │   └── tracking.js
+│   │
+│   ├── services
+│   │   └── trackingSimulator.js
+│   │
+│   ├── validators
+│   │   ├── authValidators.js
+│   │   ├── inventoryValidators.js
+│   │   └── orderValidators.js
+│   │
+│   ├── utils
+│   │   ├── asyncHandler.js
+│   │   └── generateToken.js
+│   │
+│   ├── seed.js
+│   └── index.js
+│
+├── supply-chain-frontend
+│   │
+│   ├── src
+│   │   │
+│   │   ├── api
+│   │   │   └── axios.js
+│   │   │
+│   │   ├── components
+│   │   │   ├── AppLayout.jsx
+│   │   │   ├── Charts.jsx
+│   │   │   ├── Sidebar.jsx
+│   │   │   ├── Topbar.jsx
+│   │   │   ├── ProtectedRoute.jsx
+│   │   │   └── StatusTimeline.jsx
+│   │   │
+│   │   ├── context
+│   │   │   └── AuthContext.jsx
+│   │   │
+│   │   ├── lib
+│   │   │   └── socket.js
+│   │   │
+│   │   ├── pages
+│   │   │   ├── HomePage.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Inventory.jsx
+│   │   │   ├── Orders.jsx
+│   │   │   ├── Tracking.jsx
+│   │   │   ├── Login.jsx
+│   │   │   └── Register.jsx
+│   │   │
+│   │   ├── styles
+│   │   └── assets
+│   │
+│   └── public
+│
+└── README.md
 ```
 
-## 🚀 Getting Started
+---
 
-### Prerequisites
+# 🚀 Core Modules
 
-- Node.js 18+
-- A MongoDB Atlas cluster (or local MongoDB instance)
+### Dashboard
 
-### 1. Clone & install
+Provides operational visibility through inventory statistics, shipment monitoring, low-stock alerts, delayed deliveries, and performance metrics.
 
-```bash
-git clone <your-repo-url>
-cd spcl
+### Inventory Management
 
-# Install backend dependencies
-cd server && npm install
+Tracks inventory levels, supports stock updates, and highlights products requiring replenishment.
 
-# Install frontend dependencies
-cd ../supply-chain-frontend && npm install
-```
+### Order Management
 
-### 2. Configure environment variables
+Manages the entire order lifecycle from creation to delivery with status tracking and validation.
 
-Create a `.env` file inside `server/`:
+### Shipment Tracking
 
-```env
-# Server
-PORT=5000
-NODE_ENV=development
-CLIENT_URL=http://localhost:5173
+Uses a live tracking simulator and Socket.IO to provide real-time shipment updates, ETA calculations, and route visualization.
 
-# MongoDB Atlas connection URI
-MONGO_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/supplylink?retryWrites=true&w=majority
+### Authentication
 
-# JWT
-JWT_SECRET=replace-with-a-long-random-string
-JWT_EXPIRES_IN=7d
-```
+Implements secure role-based access control for different operational users.
 
-### 3. (Optional) Seed sample data
+---
 
-```bash
-cd server
-npm run seed
-```
+# 🎯 Future Enhancements
 
-### 4. Run the app
+* Multi-Warehouse Management
+* AI Demand Forecasting
+* Route Optimization Engine
+* Delivery Prediction Models
+* QR & Barcode Integration
+* Automated Procurement Recommendations
+* Analytics & Reporting Suite
+* Cloud Deployment
+* Docker Support
+* Microservices Architecture
 
-In one terminal, start the API:
+---
 
-```bash
-cd server
-npm run dev
-```
+# 👨‍💻 Author
 
-In another, start the frontend:
+**Arpit Mehrotra**
 
-```bash
-cd supply-chain-frontend
-npm run dev
-```
+Computer Science Engineer | Full Stack Developer | AI & Machine Learning Enthusiast
 
-- API: `http://localhost:5000`
-- App: `http://localhost:5173`
+LinkedIn: Add Your Profile Link
 
-## 🔑 Roles & Permissions
+GitHub: Add Your GitHub Profile
 
-| Role | Dashboard | Orders | Inventory | Tracking |
-|---|:---:|:---:|:---:|:---:|
-| **admin** | ✅ | ✅ full access | ✅ full access | ✅ |
-| **order** | ✅ | ✅ full access | ❌ | ✅ |
-| **inventory** | ✅ | ❌ | ✅ full access | ✅ |
-
-Role checks are enforced both on the API (`protect` + `authorize` middleware) and in the React app (`ProtectedRoute` + role-aware sidebar), so a user can't reach data outside their role either by clicking around or by calling the API directly.
-
-## 📡 API Overview
-
-All routes are prefixed with `/api`. Protected routes require an `Authorization: Bearer <token>` header.
-
-| Method | Endpoint | Access | Description |
-|---|---|---|---|
-| `POST` | `/auth/register` | Public | Create a new account |
-| `POST` | `/auth/login` | Public | Log in, receive a JWT |
-| `GET` | `/auth/me` | Authenticated | Get the current user |
-| `GET` | `/orders` | admin, order | List all orders |
-| `POST` | `/orders` | admin, order | Create an order |
-| `PUT` | `/orders/:id` | admin, order | Update order status |
-| `DELETE` | `/orders/:id` | admin, order | Delete an order |
-| `GET` | `/inventory` | admin, inventory | List all inventory items |
-| `POST` | `/inventory` | admin, inventory | Add an inventory item |
-| `PATCH` | `/inventory/:id` | admin, inventory | Update stock level |
-| `DELETE` | `/inventory/:id` | admin, inventory | Delete an inventory item |
-| `GET` | `/dashboard` | Authenticated | Aggregated metrics for the dashboard |
-| `GET` | `/tracking` | Authenticated | Live position for all shipments |
-| `GET` | `/tracking/:orderId` | Authenticated | Live position for a single shipment |
-
-## 🛰️ Live Tracking Simulator
-
-Once an order's status is `shipped`, a background service interpolates its position between origin and destination cities based on `progress` (0–100), advancing it automatically and broadcasting updates over Socket.IO every few seconds — no external GPS feed required, so the whole demo runs entirely offline against your own data.
-
-## 🧪 Scripts Reference
-
-**Server** (`server/package.json`)
-| Script | Description |
-|---|---|
-| `npm start` | Run the API in production mode |
-| `npm run dev` | Run the API with auto-restart on file changes |
-| `npm run seed` | Populate the database with sample orders & inventory |
-
-**Frontend** (`supply-chain-frontend/package.json`)
-| Script | Description |
-|---|---|
-| `npm run dev` | Start the Vite dev server |
-| `npm run build` | Build for production |
-| `npm run preview` | Preview the production build locally |
-| `npm run lint` | Run ESLint |
-
-## 🗺️ Roadmap Ideas
-
-- [ ] Email notifications on critical delivery delays
-- [ ] Exportable inventory/order reports (CSV / PDF)
-- [ ] Configurable low-stock threshold per product
-- [ ] Multi-warehouse support
-
+Email: Add Your Email
