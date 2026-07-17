@@ -257,14 +257,4 @@ Implements secure role-based access control for different operational users.
 
 ---
 
-# 👨‍💻 Author
 
-**Arpit Mehrotra**
-
-Computer Science Engineer | Full Stack Developer | AI & Machine Learning Enthusiast
-
-LinkedIn: Add Your Profile Link
-
-GitHub: Add Your GitHub Profile
-
-Email: Add Your Email
