@@ -1,0 +1,94 @@
+.orders-controls {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+}
+.search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 240px;
+}
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+.search-wrap .input {
+  padding-left: 38px;
+}
+.status-select {
+  max-width: 200px;
+}
+.status-select-sm {
+  max-width: 130px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+}
+
+.order-summary {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-3);
+}
+
+.orders-table-wrapper {
+  overflow-x: auto;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.orders-table th {
+  text-align: left;
+  padding: 12px 20px;
+  background: var(--color-surface-alt);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-bottom: 1px solid var(--color-border);
+}
+.orders-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+.orders-table tr:last-child td {
+  border-bottom: none;
+}
+.orders-table tbody tr:hover {
+  background: var(--color-surface-alt);
+}
+.cell-strong {
+  font-weight: 600;
+}
+
+.row-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-btn {
+  border: none;
+  background: transparent;
+  padding: 8px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  display: flex;
+}
+.icon-btn:hover {
+  background: var(--color-neutral-light);
+}
+.icon-btn.danger:hover {
+  background: var(--color-danger-light);
+  color: var(--color-danger);
+}

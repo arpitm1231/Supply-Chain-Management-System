@@ -1,0 +1,15 @@
+.modal h2 {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+}
+.modal .subtitle {
+  margin: 0 0 var(--space-5);
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}

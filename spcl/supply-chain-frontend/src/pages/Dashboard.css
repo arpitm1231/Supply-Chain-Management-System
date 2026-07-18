@@ -1,0 +1,86 @@
+.dash-error {
+  background: var(--color-danger-light);
+  color: var(--color-danger);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-5);
+  font-size: 0.88rem;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.metric-skel {
+  height: 84px;
+}
+
+.metric-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.metric-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.tone-info .metric-icon { background: var(--color-info-light); color: var(--color-info); }
+.tone-warning .metric-icon { background: var(--color-warning-light); color: var(--color-warning); }
+.tone-success .metric-icon { background: var(--color-success-light); color: var(--color-success); }
+.tone-danger .metric-icon { background: var(--color-danger-light); color: var(--color-danger); }
+.tone-neutral .metric-icon { background: var(--color-neutral-light); color: var(--color-neutral); }
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-text);
+}
+.metric-label {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+.dashboard-charts {
+  margin-top: var(--space-2);
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-5);
+}
+
+.chart-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-5);
+}
+.chart-card h3 {
+  margin: 0 0 var(--space-3);
+  font-size: 0.95rem;
+  font-weight: 700;
+}

@@ -1,0 +1,25 @@
+.inventory-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+.summary-card {
+  padding: var(--space-4) var(--space-5);
+}
+.summary-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.summary-label {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+.summary-card.low .summary-value {
+  color: var(--color-warning);
+}
+
+.low-stock-row {
+  background: #fffaf0;
+}
