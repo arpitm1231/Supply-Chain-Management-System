@@ -23,6 +23,19 @@ Real-time inventory, orders, and GPS-style tracking — built on the MERN stack 
 
 SupplyLink is a role-based supply chain dashboard for managing **inventory**, **orders**, and **shipments** end to end. It ships with a live tracking simulator that moves shipments along real routes and streams position updates over WebSockets, so the map updates in real time without polling — no third-party GPS integration required to demo.
 
+# Screenshots:
+Sign-in/Signup Page:<img width="1366" height="722" alt="image" src="https://github.com/user-attachments/assets/11956188-8bf0-492f-ab79-30a263a52cca" />
+Dashboard:<img width="1366" height="716" alt="image" src="https://github.com/user-attachments/assets/edb72a57-1d99-4fe9-85f6-cf0b92ee0048" />
+Orders:<img width="1359" height="698" alt="image" src="https://github.com/user-attachments/assets/b77ba815-31e3-45f1-80a1-01e8bc5c9223" />
+Inventory:<img width="1366" height="719" alt="image" src="https://github.com/user-attachments/assets/77b4cc3c-7c21-44ce-8b26-5b3abd32e219" />
+
+Tracking:<img width="1365" height="723" alt="image" src="https://github.com/user-attachments/assets/4112d49b-78f6-442c-9fba-a17e16944813" />
+
+
+
+
+
+
 ## 🚀 Features
 
 | | |
